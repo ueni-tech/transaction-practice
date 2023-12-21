@@ -6,6 +6,15 @@
   <title>トランザクション</title>
 </head>
 <body>
+  @if ($errors->any())
+  <div>
+    <ul>
+      @foreach ($errors->all() as $error)
+      <li>{{ $error }}</li>
+      @endforeach
+    </ul>
+  </div>
+  @endif
   <form action="{{ route('sampleStore') }}" method="post">
     @csrf
     <input type="text" name="content1">
